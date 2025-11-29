@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Family Orchards</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.5; margin:0; color:#222; }
+    header { background:#0b7a4d; color:#fff; padding:2rem 1rem; text-align:center; }
+    main { padding:1.5rem; max-width:900px; margin:0 auto; }
+    .hero { margin:1rem 0; background:#f4f7f3; padding:1rem; border-radius:8px; }
+    footer { text-align:center; padding:1rem; color:#666; font-size:0.9rem; }
+    a.button { display:inline-block; background:#0b7a4d; color:#fff; padding:0.5rem 0.9rem; border-radius:6px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Family Orchards</h1>
+    <p>Welcome — home of our family orchard and seasonal fruit information</p>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Us</h2>
+      <p>Our story begins with soil, sunlight, and generations of care. We grow with sustainable methods and harvest each season with our community.</p>
+    </section>
+
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Visit or Contact</h2>
+      <p>Seasonal hours, directions, and produce availability will be posted here. For questions, email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </section>
+
+    <p><a class="button" href="#">Learn more</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Family Orchards</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
