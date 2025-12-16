@@ -4,9 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Family Orchards</title>
+  <link rel="stylesheet" href="assets/css/banner.css">
   <style>
     body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.5; margin:0; color:#222; }
-    header { background:#0b7a4d; color:#fff; padding:2rem 1rem; text-align:center; }
+    .site-header { background:#0b7a4d; color:#fff; padding:2rem 1rem; text-align:center; }
     main { padding:1.5rem; max-width:900px; margin:0 auto; }
     .hero { margin:1rem 0; background:#f4f7f3; padding:1rem; border-radius:8px; }
     section { margin-bottom:2rem; }
@@ -16,7 +17,16 @@
   </style>
 </head>
 <body>
-  <header>
+  <!-- Top banner: uses images/streetAIview.jpeg (already uploaded to branch add/banner-image) -->
+  <div class="banner-wrapper" role="banner" aria-label="Family Orchards banner">
+    <picture>
+      <!-- If you later add a WebP version (images/streetAIview.webp), it will be used automatically -->
+      <source srcset="images/streetAIview.webp" type="image/webp">
+      <img class="site-banner" src="images/streetAIview.jpeg" alt="Entrance gate and orchard at Family Orchards">
+    </picture>
+  </div>
+
+  <header class="site-header">
     <h1>Family Orchards</h1>
     <p>Welcome — home of our seasonal fruit information</p>
   </header>
@@ -35,7 +45,7 @@
       </p>
       <p>
         Visit us on Facebook:
-        <a href="https://www.facebook.com/profile.php?id=100070458810470" target="_blank">Family Orchards on Facebook</a>
+        <a href="https://www.facebook.com/profile.php?id=100070458810470" target="_blank" rel="noopener">Family Orchards on Facebook</a>
       </p>
     </section>
 
@@ -47,45 +57,16 @@
     <section aria-labelledby="attractions-heading">
       <h2 id="attractions-heading">Local Attractions</h2>
       <ul>
-        <li><a href="https://www.google.com/maps/uv?pb=!1s0x88db837a192c4ce9%3A0x31f45ba9b1c7a42b!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOXeh6RsOF9Kt1_KgpX9Oh-sPv5OCUfm1ZcO_BM%3Dw213-h160-k-no!5scabbage%20patch%20festival%20labelle%20fl%20-%20Google%20Search!15sCg0KCS9tLzAzcXR3ZDAB&imagekey=!1e10!2sAF1QipOXeh6RsOF9Kt1_KgpX9Oh-sPv5OCUfm1ZcO_BM&hl=en&sa=X&ved=2ahUKEwiRh4zx6Nf4AhXamWoFHbNFDRAQoip6BAhiEAM"><strong>LaBelle Swamp Cabbage Festival</strong></a> — February</li>
-        <li><a href="https://www.google.com/search?q=gatorama"><strong>Gatorama</strong></a> — Learn and play with alligators and crocodiles (Open Thurs–Mon, 10am–5pm)</li>
-        <li><a href="https://www.blueberrybunchfarm.com/"><strong>Blueberry U‑Pick</strong></a> — March through May</li>
-        <li><a href="https://visitglades.org/come-play/ortona-indian-mound/"><strong>Indian Mounds</strong></a></li>
+        <li>Nearby coastal beaches</li>
+        <li>State parks and picnic areas</li>
+        <li>Local markets and eateries</li>
       </ul>
     </section>
 
-    <section aria-labelledby="sugar-heading">
-      <h2 id="sugar-heading">South Central Florida Highlights</h2>
-      <p>South Central Florida is a major producer of sugarcane. Explore:</p>
-      <ul>
-        <li><a href="https://www.clewistonsugarfestival.com/"><strong>Clewiston Sugar Festival</strong></a> — March</li>
-        <li><a href="https://sugarsanddistillery.com/"><strong>Sugarcane Moonshine Distillery</strong></a> — Lake Placid, FL (beautiful city of lakes)</li>
-        <li><a href="https://www.facebook.com/Ortona-Cane-Grinding-Festival-112622833599534/"><strong>Ortona Cane Grinding Festival</strong></a> — Indian Mounds Preserve, first Saturday in February</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="outdoors-heading">
-      <h2 id="outdoors-heading">Outdoor Adventures</h2>
-      <p>In addition to National Parks like the Everglades and State Parks in the Keys, the Florida Wildlife Corridor includes public lands for hiking, paddling, and camping. Our farm is near Fisheating Creek and Gatorama.</p>
-      <h3>Nearby Natural Areas</h3>
-      <ul>
-        <li><a href="https://www.nps.gov/bicy/index.htm">Big Cypress National Preserve</a></li>
-        <li><a href="http://floridahikes.com/caloosahatchee">Caloosahatchee Regional Park</a></li>
-        <li><a href="https://www.floridastateparks.org/park/Fakahatchee-Strand">Fakahatchee Strand Preserve State Park</a></li>
-        <li><a href="http://myfwc.com/viewing/recreation/wmas/lead/fisheating-creek">Fisheating Creek Wildlife Management Area</a></li>
-        <li><a href="http://www.floridatrail.org/southernregion/">Florida National Scenic Trail, Southern Region</a></li>
-        <li><a href="http://www.floridatrail.org/southernregion/">Florida Panther National Wildlife Refuge</a></li>
-        <li><a href="http://www.freshfromflorida.com/Divisions-Offices/Florida-Forest-Service/Our-Forests/State-Forests/Okaloacoochee-Slough-State-Forest">Okaloacoochee Slough State Forest</a></li>
-        <li><a href="http://www.freshfromflorida.com/Divisions-Offices/Florida-Forest-Service/Our-Forests/State-Forests/Picayune-Strand-State-Forest">Picayune Strand</a></li>
-      </ul>
-    </section>
-
-    <p><a class="button" href="#">Learn more</a></p>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Family Orchards</p>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    &copy; Family Orchards
   </footer>
 </body>
 </html>
