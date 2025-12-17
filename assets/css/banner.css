@@ -1,3 +1,3 @@
-banner-wrapper { width: 100%; max-height: 60vh; height: 40vh; /* explicit height so the image displays */ overflow: hidden; display: block; background-color: #000; }
+.banner-wrapper { width: 100%; height: 35vh; /* explicit banner height (change to 30vh/40vh to taste) / max-height: 60vh; / prevents overly tall banners on very large screens */ overflow: hidden; display: block; background-color: #000; }
 
-.banner-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.banner-wrapper img, .banner-wrapper picture, .banner-wrapper picture img { width: 100%; height: 100%; object-fit: cover; display: block; }
