@@ -1,9 +1,9 @@
 /* Responsive banner: moderate on phones, taller on desktop.
-   Uses an <img> (keeps alt text) and places a readable overlay title.
+   Overlay title is positioned toward the top and slightly right of left.
+   No background behind the text (pure black letters over the image).
 */
 
 :root {
-  /* tweak these if you want different default sizing */
   --banner-min: 240px;
   --banner-vh: 32vh;
   --banner-max: 420px;
@@ -32,46 +32,56 @@
   object-position: 50% 60%; /* shows middle; adjust if needed */
 }
 
-/* Overlay title that sits on top of the image */
+/* Overlay title: moved toward the top and slightly right of left.
+   No white background; pure black text as requested. */
 .banner-title {
   position: absolute;
-  left: 24px;
-  bottom: 20px;
+  top: 26px;            /* moved toward the top of the banner */
+  left: 18%;            /* slightly to the right of the left edge, not centered */
   margin: 0;
-  padding: 6px 10px;
+  padding: 0;           /* no background so no padding */
   font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 700;         /* bold */
-  font-size: 22pt;          /* requested size (22pt) */
+  font-weight: 700;     /* bold */
+  font-size: 22pt;      /* requested size (22pt) */
   line-height: 1;
-  color: #000;              /* black text */
-  background: rgba(255,255,255,0.78); /* backing to ensure legibility */
-  border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-  pointer-events: none;     /* don't intercept pointer events on banner */
+  color: #000;          /* black letters over the image */
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  pointer-events: none; /* don't intercept clicks on the banner */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* If readability becomes an issue on some areas of the photo,
+     uncomment the next line to add a subtle highlight around the text:
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6); */
 }
 
-/* Larger screens: make banner noticeably taller */
+/* Larger screens: increase banner height and nudge title a bit */
 @media (min-width: 1024px) {
   .banner-wrapper {
     height: clamp(var(--banner-desktop-min), var(--banner-desktop-vh), var(--banner-desktop-max));
   }
-  .banner-title { left: 32px; bottom: 26px; }
+  .banner-title {
+    top: 36px;
+    left: 16%;
+  }
 }
 
-/* Small-screen tweak */
+/* Small-screen tweak: smaller text and move a bit inward from left edge */
 @media (max-width: 480px) {
   .banner-wrapper {
     height: clamp(var(--banner-mobile-min), var(--banner-mobile-vh), var(--banner-mobile-max));
   }
   .banner-title {
     font-size: 18pt;
-    left: 12px;
-    bottom: 12px;
-    padding: 4px 8px;
+    top: 12px;
+    left: 8%;
   }
 }
 
-/* If you ever switch to a background-image approach, remove .banner-wrapper img rules above
-   and use `background-position` instead. But <img> is better for accessibility (alt text). */
+/* Notes:
+   - If the black text is unreadable against parts of your photo, enable the text-shadow
+     line above, or consider a very subtle semi-transparent backing (I didn't add that
+     because you asked for no white background).
+   - You can tweak `left` and `top` values to fine-tune horizontal/vertical placement.
+*/
