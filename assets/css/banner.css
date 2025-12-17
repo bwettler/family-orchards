@@ -1,10 +1,27 @@
-/* Responsive banner: moderate on phones, taller on desktop */
+/* Responsive banner: moderate on phones, taller on desktop.
+   Uses an <img> (keeps alt text) and places a readable overlay title.
+*/
+
+:root {
+  /* tweak these if you want different default sizing */
+  --banner-min: 240px;
+  --banner-vh: 32vh;
+  --banner-max: 420px;
+  --banner-desktop-min: 360px;
+  --banner-desktop-vh: 45vh;
+  --banner-desktop-max: 900px;
+  --banner-mobile-min: 160px;
+  --banner-mobile-vh: 28vh;
+  --banner-mobile-max: 300px;
+}
+
 .banner-wrapper {
   width: 100%;
-  height: clamp(240px, 32vh, 420px); /* default: min 240px, fluid 32vh, max 420px */
+  height: clamp(var(--banner-min), var(--banner-vh), var(--banner-max));
   overflow: hidden;
   display: block;
   background-color: #000;
+  position: relative; /* required for absolute overlay */
 }
 
 .banner-wrapper img {
@@ -12,19 +29,49 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 60%; /* show more middle, less bottom */
+  object-position: 50% 60%; /* shows middle; adjust if needed */
+}
+
+/* Overlay title that sits on top of the image */
+.banner-title {
+  position: absolute;
+  left: 24px;
+  bottom: 20px;
+  margin: 0;
+  padding: 6px 10px;
+  font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;         /* bold */
+  font-size: 22pt;          /* requested size (22pt) */
+  line-height: 1;
+  color: #000;              /* black text */
+  background: rgba(255,255,255,0.78); /* backing to ensure legibility */
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  pointer-events: none;     /* don't intercept pointer events on banner */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Larger screens: make banner noticeably taller */
 @media (min-width: 1024px) {
   .banner-wrapper {
-    height: clamp(360px, 45vh, 900px); /* taller on desktop */
+    height: clamp(var(--banner-desktop-min), var(--banner-desktop-vh), var(--banner-desktop-max));
   }
-  .banner-wrapper img { object-position: 50% 60%; }
+  .banner-title { left: 32px; bottom: 26px; }
 }
 
-/* Small-screen tweak if needed */
+/* Small-screen tweak */
 @media (max-width: 480px) {
-  .banner-wrapper { height: clamp(160px, 28vh, 300px); }
-  .banner-wrapper img { object-position: 50% 55%; }
+  .banner-wrapper {
+    height: clamp(var(--banner-mobile-min), var(--banner-mobile-vh), var(--banner-mobile-max));
+  }
+  .banner-title {
+    font-size: 18pt;
+    left: 12px;
+    bottom: 12px;
+    padding: 4px 8px;
+  }
 }
+
+/* If you ever switch to a background-image approach, remove .banner-wrapper img rules above
+   and use `background-position` instead. But <img> is better for accessibility (alt text). */
