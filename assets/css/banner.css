@@ -1,3 +1,22 @@
-.banner-wrapper { width: 100%; height: 35vh; /* explicit banner height (change to 30vh/40vh to taste) / max-height: 60vh; / prevents overly tall banners on very large screens */ overflow: hidden; display: block; background-color: #000; }
+/* Banner using an <img> element (keeps alt text for accessibility) */
+.banner-wrapper {
+  width: 100%;
+  height: clamp(220px, 32vh, 420px); /* responsive banner height */
+  overflow: hidden;
+  display: block;
+  background-color: #000;
+}
 
-.banner-wrapper img, .banner-wrapper picture, .banner-wrapper picture img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.banner-wrapper img {
+  display: block;           /* remove inline-gap */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fill & crop */
+  object-position: 50% 82%; /* bias crop toward the bottom — shows gate/address */
+}
+
+/* Slight tweak for small screens */
+@media (max-width: 480px) {
+  .banner-wrapper { height: clamp(140px, 28vh, 300px); }
+  .banner-wrapper img { object-position: 50% 88%; } /* shift crop further down on phones */
+}
