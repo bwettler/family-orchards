@@ -1,22 +1,30 @@
-/* Banner using an <img> element (keeps alt text for accessibility) */
+/* Responsive banner: moderate on phones, taller on desktop */
 .banner-wrapper {
   width: 100%;
-  height: clamp(220px, 32vh, 420px); /* responsive banner height */
+  height: clamp(240px, 32vh, 420px); /* default: min 240px, fluid 32vh, max 420px */
   overflow: hidden;
   display: block;
   background-color: #000;
 }
 
 .banner-wrapper img {
-  display: block;           /* remove inline-gap */
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* fill & crop */
-  object-position: 50% 60%; /* bias crop toward the bottom — shows gate/address */
+  object-fit: cover;
+  object-position: 50% 60%; /* show more middle, less bottom */
 }
 
-/* Slight tweak for small screens */
+/* Larger screens: make banner noticeably taller */
+@media (min-width: 1024px) {
+  .banner-wrapper {
+    height: clamp(360px, 45vh, 900px); /* taller on desktop */
+  }
+  .banner-wrapper img { object-position: 50% 60%; }
+}
+
+/* Small-screen tweak if needed */
 @media (max-width: 480px) {
-  .banner-wrapper { height: clamp(140px, 28vh, 300px); }
-  .banner-wrapper img { object-position: 50% 88%; } /* shift crop further down on phones */
+  .banner-wrapper { height: clamp(160px, 28vh, 300px); }
+  .banner-wrapper img { object-position: 50% 55%; }
 }
