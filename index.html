@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Family Orchards</title>
   <link rel="stylesheet" href="assets/css/banner.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe.css">
   <style>
     /* Page-level fallbacks and simple layout — keep here or move to a separate file */
     body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.5; margin:0; color:#222; background:#fff; }
@@ -25,7 +26,55 @@
     }
     address p { margin: 0 0 0.75rem 0; }
     .map-link { display:inline-block; margin-top:0.5rem; color:#0b7a4d; text-decoration:underline; }
+    /* Photo Gallery Styles */
+.gallery-grid {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.gallery-grid a {
+  position: relative;
+  display: block;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.gallery-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(11, 122, 77, 0.9);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid a:hover .gallery-overlay {
+  transform: translateY(0);
+}
   </style>
+  
 </head>
 <body>
   <!-- Top banner: uses streetAIview.jpg at repo root -->
@@ -40,6 +89,34 @@
       <p>Our story begins with soil, sunlight, and generations of care. We grow with sustainable methods and harvest each season with our community.</p>
     </section>
 
+    <section aria-labelledby="gallery-heading">
+  <h2 id="gallery-heading">Photo Gallery</h2>
+  
+  <div class="gallery-grid" id="gallery">
+    <!-- Thumbnail image that opens the gallery -->
+    <a href="path/to/your/main-photo.jpg" 
+       data-pswp-width="1200" 
+       data-pswp-height="800"
+       target="_blank"
+       rel="noopener">
+      <img src="path/to/your/main-photo.jpg" alt="Family Orchards" class="gallery-thumbnail">
+      <span class="gallery-overlay">View Gallery (12 photos)</span>
+    </a>
+    
+    <!-- Hidden gallery images (these won't show on page but will open in lightbox) -->
+    <a href="path/to/photo2.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo3.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo4.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo5.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo6.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo7.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo8.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo9.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo10.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo11.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+    <a href="path/to/photo12.jpg" data-pswp-width="1200" data-pswp-height="800" style="display:none;"></a>
+  </div>
+</section>
     <section aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact & Visit</h2>
 
@@ -80,7 +157,20 @@
       </ul>
     </section>
   </main>
+<script type="module">
+  import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from 'https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe.esm.min.js';
 
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery',
+    children: 'a',
+    pswpModule: PhotoSwipe,
+    bgOpacity: 0.9,
+    spacing: 0.1
+  });
+  
+  lightbox.init();
+</script>
   <footer>
     <p><a href="https://www.example.com/privacy">Privacy</a> · <a href="https://www.example.com/terms">Terms</a></p>
     <p>&copy; Family Orchards</p>
