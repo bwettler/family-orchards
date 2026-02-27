@@ -1,24 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Production Plan | Family Orchards LLC</title>
-    <link rel="stylesheet" href="assets/css/banner.css">
-    <style>
-        /* Inserted styles from summary.html */
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Production Plan | Family Orchards LLC</title>
+  <link rel="stylesheet" href="assets/css/banner.css">
+
+  <style>
+    details.section {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0.75rem 0.9rem;
+      margin: 0.75rem 0;
+      background: #fff;
+    }
+
+    /* Roman numeral lines (the <summary> text) */
+    details.section > summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+      outline: none;
+      color: #0b2e6f; /* dark blue */
+    }
+
+    details.section > summary::-webkit-details-marker { display: none; }
+
+    details.section > summary::before {
+      content: "▸";
+      display: inline-block;
+      width: 1.25em;
+      color: #0b2e6f; /* match dark blue */
+    }
+
+    details.section[open] > summary::before { content: "▾"; }
+
+    .section-body { margin-top: 0.75rem; }
+  </style>
 </head>
+
 <body>
-    <div class="banner-wrapper">
-        <img src="streetAIview.jpg" alt="Family Orchards Banner">
-        <h1>Family Orchards, LLC</h1>
-    </div>
-    <main>
-        <!-- Inserted main content from summary.html -->
-    </main>
-    <script>
-        // Inserted script from summary.html (hash-opening details)
-    </script>
+  <!-- Top banner: uses streetAIview.jpg at repo root -->
+  <div class="banner-wrapper" role="banner" aria-label="Family Orchards banner">
+    <img class="site-banner" src="streetAIview.jpg" alt="Entrance gate and orchard at Family Orchards">
+    <h1 class="banner-title">Family Orchards, LLC</h1>
+  </div>
+
+  <main>
+    <h1>Family Orchards LLC — Agricultural Production Plan</h1>
+
+    <h2>Property Overview</h2>
+    <ul>
+      <li><strong>Total Acreage:</strong> 12.66 acres</li>
+      <li><strong>Acres Under Cultivation:</strong> 2.5 acres</li>
+      <li><strong>Pond Surface Area:</strong> 10,000 square feet (about 0.23 acres)</li>
+      <li><strong>Acres Under Active Preparation / Fallow:</strong> 8 acres
+        <br />
+        <span>Management activities on those fallow blocks include mowing, weed suppression, soil building, and layout work for upcoming plantings.</span>
+      </li>
+    </ul>
+
+    <!-- I -->
+    <details class="section" id="section-i">
+      <summary>I. Executive Summary</summary>
+      <div class="section-body">
+        <p>
+          Family Orchards LLC conducts diversified agricultural production in Glades County, Florida. The operation targets
+          direct-to-consumer retail sales from specialty crops, Christmas tree cultivation, and small-scale aquaculture.
+          Management follows staged plantings and crop timelines while maintaining records that demonstrate good-faith
+          commercial agricultural use, ongoing cultivation, and income generation.
+        </p>
+      </div>
+    </details>
+
+    <!-- II -->
+    <details class="section" id="section-ii">
+      <summary>II. Current and Planned Crop Production</summary>
+      <div class="section-body">
+        <ul>
+          <li><strong>Lemongrass:</strong> 1 acre planted during 2024; first commercial harvest targeted for 2026.</li>
+          <li><strong>Pine trees (Christmas trees):</strong> 1.5 acres planted during 2025; cultivation targets retail Christmas tree sales starting with the 2030 season.</li>
+          <li><strong>Sugarcane:</strong> 4 acres scheduled for planting during March 2026; first harvest targeted for 2027.</li>
+          <li><strong>Bamboo (edible shoots only):</strong> 0.5 acre scheduled for planting during 2026; shoot harvest targeted roughly one year after planting. No pole harvest or pole sales.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- III -->
+    <details class="section" id="section-iii">
+      <summary>III. Aquaculture Production Plan (Tilapia — Beginning 2026)</summary>
+      <div class="section-body">
+        <p>
+          Beginning in 2026, the operation will use an existing 10,000-square-foot freshwater pond (about 0.23 acre of surface area)
+          for small-scale Nile tilapia production.
+        </p>
+        <ul>
+          <li><strong>Species:</strong> Nile tilapia</li>
+          <li><strong>Projected annual stocking:</strong> 400–600 fingerlings</li>
+          <li><strong>Target survival range:</strong> 70–75%</li>
+          <li><strong>Target harvest weight:</strong> 1.25 pounds per fish (average)</li>
+          <li><strong>Projected yield:</strong> 450–550 pounds per production cycle</li>
+        </ul>
+        <p>
+          Stocking occurs during fall. Grow-out continues for 6–8 months, with harvest during the summer.
+          Retail sales proceed through direct-to-consumer channels.
+        </p>
+        <p>
+          Pond management includes feed control, water-quality monitoring, predator management, and scheduled harvest.
+          Future upgrades could include aeration to expand production capacity.
+        </p>
+      </div>
+    </details>
+
+    <!-- IV -->
+    <details class="section" id="section-iv">
+      <summary>IV. Revenue History and Projections</summary>
+      <div class="section-body">
+        <ul>
+          <li><strong>2025 actual gross sales:</strong> $2,000</li>
+          <li><strong>2026 projected gross sales:</strong> about $8,000 (lemongrass plus tilapia)</li>
+          <li><strong>2027 projected gross sales:</strong> about $15,000 (sugarcane plus lemongrass plus bamboo shoots plus tilapia); about $12,000 projected from sugarcane and lemongrass sales</li>
+          <li><strong>2030 and beyond:</strong> gross sales projected above $30,000 annually once Christmas tree harvest begins</li>
+        </ul>
+
+        <h3>Operational practices include</h3>
+        <ul>
+          <li><strong>Commercial intent and sales:</strong> retail sales records and projected income targets for specialty crops, row crops, Christmas trees, and aquaculture.</li>
+          <li><strong>Continuous management:</strong> planting, cultivation, mowing, weed control, fertilization, and irrigation planning across production blocks.</li>
+          <li><strong>Land care and improvement:</strong> soil amendments, cover-crop use, mulching, and site preparation on fallow blocks scheduled for planting.</li>
+          <li><strong>Aquaculture management:</strong> feed management, water-quality monitoring, predator deterrence, and seasonal harvest scheduling.</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+
+  <script>
+    // If the URL includes a hash like #section-iii, open that <details> automatically.
+    (function () {
+      function openFromHash() {
+        var id = window.location.hash ? window.location.hash.slice(1) : "";
+        if (!id) return;
+        var el = document.getElementById(id);
+        if (el && el.tagName && el.tagName.toLowerCase() === "details") {
+          el.open = true;
+          el.scrollIntoView({ block: "start" });
+        }
+      }
+
+      window.addEventListener("hashchange", openFromHash);
+      openFromHash();
+    })();
+  </script>
 </body>
 </html>
