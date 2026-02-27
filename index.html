@@ -13,10 +13,8 @@
       padding: 0.75rem 0.9rem;
       margin: 0.75rem 0;
       background: #fff;
-    }
 
-    /* Constrain only the roman-numeral <details> sections */
-    details.section {
+      /* Constrain only the roman-numeral <details> sections */
       max-width: 820px;      /* match the image max width */
       margin-left: auto;     /* center the section */
       margin-right: auto;    /* center the section */
@@ -48,12 +46,18 @@
     .section-figure { margin: 0 0 0.75rem 0; }
     .section-image {
       display: block;
-      width: 100%;
-      max-width: 820px; /* same as details.section */
+
+      /* Reduce displayed size to ~1/8 of the container width */
+      width: 12.5%;
+
+      /* Prevent it from getting too tiny on small screens */
+      min-width: 160px;
+
       height: auto;
       border-radius: 8px;
       border: 1px solid #e6e6e6;
     }
+
     .section-caption {
       margin-top: 0.35rem;
       color: #555;
