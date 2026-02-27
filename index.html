@@ -15,9 +15,9 @@
       background: #fff;
 
       /* Constrain only the roman-numeral <details> sections */
-      max-width: 820px;      /* match the image max width */
-      margin-left: auto;     /* center the section */
-      margin-right: auto;    /* center the section */
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Roman numeral lines (the <summary> text) */
@@ -35,33 +35,47 @@
       content: "▸";
       display: inline-block;
       width: 1.25em;
-      color: #0b2e6f; /* match dark blue */
+      color: #0b2e6f;
     }
 
     details.section[open] > summary::before { content: "▾"; }
 
     .section-body { margin-top: 0.75rem; }
 
-    /* Image styling for section illustrations */
-    .section-figure { margin: 0 0 0.75rem 0; }
+    /* Image styling */
+    .section-figure { margin: 0; }
     .section-image {
       display: block;
-
-      /* Reduce displayed size to ~1/8 of the container width */
-      width: 12.5%;
-
-      /* Prevent it from getting too tiny on small screens */
-      min-width: 160px;
-
+      width: 160px;     /* small image, roughly your 1/8 intent */
       height: auto;
       border-radius: 8px;
       border: 1px solid #e6e6e6;
     }
-
     .section-caption {
       margin-top: 0.35rem;
       color: #555;
       font-size: 0.95rem;
+    }
+
+    /* Layout: image left, bullet points right (Section III only) */
+    .iii-media {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin: 0.5rem 0 0.75rem;
+    }
+    .iii-media .iii-image {
+      flex: 0 0 auto;
+    }
+    .iii-media .iii-bullets {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    /* Stack on small screens */
+    @media (max-width: 600px) {
+      .iii-media { flex-direction: column; }
+      .section-image { width: 100%; max-width: 320px; }
     }
   </style>
 </head>
@@ -115,27 +129,33 @@
     <details class="section" id="section-iii">
       <summary>III. Aquaculture Production Plan (Tilapia — Beginning 2026)</summary>
       <div class="section-body">
-        <figure class="section-figure">
-          <img
-            class="section-image"
-            src="assets/plan/tilapia4.jpg"
-            alt="Tilapia harvest example for small-scale aquaculture production"
-            loading="lazy"
-          />
-          <figcaption class="section-caption">Tilapia production (illustrative).</figcaption>
-        </figure>
-
         <p>
           Beginning in 2026, the operation will use an existing 10,000-square-foot freshwater pond (about 0.23 acre of surface area)
           for small-scale Nile tilapia production.
         </p>
-        <ul>
-          <li><strong>Species:</strong> Nile tilapia</li>
-          <li><strong>Projected annual stocking:</strong> 400–600 fingerlings</li>
-          <li><strong>Target survival range:</strong> 70–75%</li>
-          <li><strong>Target harvest weight:</strong> 1.25 pounds per fish (average)</li>
-          <li><strong>Projected yield:</strong> 450–550 pounds per production cycle</li>
-        </ul>
+
+        <div class="iii-media">
+          <figure class="section-figure iii-image">
+            <img
+              class="section-image"
+              src="assets/plan/tilapia4.jpg"
+              alt="Tilapia harvest example for small-scale aquaculture production"
+              loading="lazy"
+            />
+            <figcaption class="section-caption">Tilapia production (illustrative).</figcaption>
+          </figure>
+
+          <div class="iii-bullets">
+            <ul>
+              <li><strong>Species:</strong> Nile tilapia</li>
+              <li><strong>Projected annual stocking:</strong> 400–600 fingerlings</li>
+              <li><strong>Target survival range:</strong> 70–75%</li>
+              <li><strong>Target harvest weight:</strong> 1.25 pounds per fish (average)</li>
+              <li><strong>Projected yield:</strong> 450–550 pounds per production cycle</li>
+            </ul>
+          </div>
+        </div>
+
         <p>
           Stocking occurs during fall. Grow-out continues for 6–8 months, with harvest during the summer.
           Retail sales proceed through direct-to-consumer channels.
