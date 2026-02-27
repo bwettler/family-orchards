@@ -36,6 +36,22 @@
     details.section[open] > summary::before { content: "▾"; }
 
     .section-body { margin-top: 0.75rem; }
+
+    /* Image styling for section illustrations */
+    .section-figure { margin: 0 0 0.75rem 0; }
+    .section-image {
+      display: block;
+      width: 100%;
+      max-width: 820px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #e6e6e6;
+    }
+    .section-caption {
+      margin-top: 0.35rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 
@@ -88,6 +104,16 @@
     <details class="section" id="section-iii">
       <summary>III. Aquaculture Production Plan (Tilapia — Beginning 2026)</summary>
       <div class="section-body">
+        <figure class="section-figure">
+          <img
+            class="section-image"
+            src="assets/plan/tilapia4.jpg"
+            alt="Tilapia harvest example for small-scale aquaculture production"
+            loading="lazy"
+          />
+          <figcaption class="section-caption">Tilapia production (illustrative).</figcaption>
+        </figure>
+
         <p>
           Beginning in 2026, the operation will use an existing 10,000-square-foot freshwater pond (about 0.23 acre of surface area)
           for small-scale Nile tilapia production.
