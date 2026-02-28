@@ -26,7 +26,7 @@
       font-weight: 700;
       list-style: none;
       outline: none;
-      color: #0b2e6f; /* dark blue */
+      color: #0b2e6f;
     }
 
     details.section > summary::-webkit-details-marker { display: none; }
@@ -46,16 +46,20 @@
     .section-figure { margin: 0; }
     .section-image {
       display: block;
-      width: 160px;     /* small image, roughly your 1/8 intent */
+      width: 160px; /* small image */
       height: auto;
       border-radius: 8px;
       border: 1px solid #e6e6e6;
     }
+
     .section-caption {
       margin-top: 0.35rem;
       color: #555;
       font-size: 0.95rem;
+      line-height: 1.25;
     }
+
+    .section-caption a { color: inherit; }
 
     /* Layout: image left, bullet points right (Section III only) */
     .iii-media {
@@ -64,13 +68,8 @@
       gap: 1rem;
       margin: 0.5rem 0 0.75rem;
     }
-    .iii-media .iii-image {
-      flex: 0 0 auto;
-    }
-    .iii-media .iii-bullets {
-      flex: 1 1 auto;
-      min-width: 0;
-    }
+    .iii-media .iii-image { flex: 0 0 auto; }
+    .iii-media .iii-bullets { flex: 1 1 auto; min-width: 0; }
 
     /* Stack on small screens */
     @media (max-width: 600px) {
@@ -139,10 +138,15 @@
             <img
               class="section-image"
               src="assets/plan/tilapia4.jpg"
-              alt="Tilapia harvest example for small-scale aquaculture production"
+              alt="Fish vendor holding tilapia at Portbell, Kampala, Uganda"
               loading="lazy"
             />
-            <figcaption class="section-caption">Tilapia production (illustrative).</figcaption>
+            <figcaption class="section-caption">
+              <a href="https://commons.wikimedia.org/wiki/File:A_fish_monger_showing_tilapia_sold_at_Portbell.jpg">“A fish monger showing tilapia sold at Portbell”</a>
+              — Ssemmanda will, Wikimedia Commons.
+              <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+              Changes: hat text updated; shirt recolored to solid green.
+            </figcaption>
           </figure>
 
           <div class="iii-bullets">
