@@ -42,25 +42,6 @@
 
     .section-body { margin-top: 0.75rem; }
 
-    /* Image styling */
-    .section-figure { margin: 0; }
-    .section-image {
-      display: block;
-      width: 160px; /* small image */
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid #e6e6e6;
-    }
-
-    .section-caption {
-      margin-top: 0.35rem;
-      color: #555;
-      font-size: 0.95rem;
-      line-height: 1.25;
-    }
-
-    .section-caption a { color: inherit; }
-
     /* Layout: image left, bullet points right (Section III only) */
     .iii-media {
       display: flex;
@@ -74,7 +55,46 @@
     /* Stack on small screens */
     @media (max-width: 600px) {
       .iii-media { flex-direction: column; }
-      .section-image { width: 100%; max-width: 320px; }
+    }
+
+    /* Tilapia figure + credit marker */
+    .tilapia-figure { margin: 0; }
+    .tilapia-figure img {
+      display: block;
+      width: 160px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #e6e6e6;
+    }
+    .credit-marker {
+      margin-top: 0.25rem;
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+    .credit-marker a {
+      text-decoration: none;
+      color: #0b2e6f;
+    }
+    .credit-marker a:hover,
+    .credit-marker a:focus {
+      text-decoration: underline;
+    }
+
+    /* Bottom sub-footer */
+    .sub-footer {
+      margin-top: 2rem;
+      padding: 1rem 0 1.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    .sub-footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .sub-footer a:hover,
+    .sub-footer a:focus {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -134,20 +154,14 @@
         </p>
 
         <div class="iii-media">
-          <figure class="section-figure iii-image">
-            <img
-              class="section-image"
-              src="assets/plan/tilapia4.jpg"
-              alt="Fish vendor holding tilapia at Portbell, Kampala, Uganda"
-              loading="lazy"
-            />
-            <figcaption class="section-caption">
-              <a href="https://commons.wikimedia.org/wiki/File:A_fish_monger_showing_tilapia_sold_at_Portbell.jpg">“A fish monger showing tilapia sold at Portbell”</a>
-              — Ssemmanda will, Wikimedia Commons.
-              <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
-              Changes: hat text updated; shirt recolored to solid green.
-            </figcaption>
-          </figure>
+          <div class="iii-image">
+            <figure class="tilapia-figure">
+              <img src="/images/tilapia-market.jpg" alt="Fish vendor holding tilapia at Portbell market">
+              <figcaption class="credit-marker">
+                <a href="/copyright.html#portbell-tilapia" aria-label="copyright">ⓘ</a>
+              </figcaption>
+            </figure>
+          </div>
 
           <div class="iii-bullets">
             <ul>
@@ -191,6 +205,10 @@
         </ul>
       </div>
     </details>
+
+    <div class="sub-footer">
+      <a href="/copyright.html">copyright</a>
+    </div>
   </main>
 
   <script>
