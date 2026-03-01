@@ -9,10 +9,16 @@
     a{text-decoration:underline}
     .item{margin:18px 0;padding:14px 0;border-bottom:1px solid #e5e5e5}
     .label{font-weight:700}
+    .top-nav{margin:10px 0 18px}
+    .back-link{display:inline-block}
   </style>
 </head>
 <body>
   <h1>copyright</h1>
+
+  <nav class="top-nav" aria-label="Page navigation">
+    <a class="back-link" href="/" onclick="if (history.length > 1) { history.back(); return false; }">← Back</a>
+  </nav>
 
   <section id="portbell-tilapia" class="item">
     <div><span class="label">Work:</span> “A fish monger showing tilapia sold at Portbell”</div>
