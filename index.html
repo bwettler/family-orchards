@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Production Plan | Family Orchards LLC</title>
-  <link rel="stylesheet" href="assets/css/banner.css">
+  <title>Family Orchards LLC | Farm Products and Production Plan</title>
+  <meta
+    name="description"
+    content="Family Orchards LLC is a diversified farm in Glades County, Florida, growing lemongrass, sugarcane, bamboo shoots, Christmas trees, and tilapia."
+  />
+  <link rel="stylesheet" href="assets/css/banner.css" />
+  <link rel="stylesheet" href="assets/css/site.css" />
 
   <style>
     details.section {
@@ -80,36 +85,131 @@
       text-decoration: underline;
     }
 
-    /* Bottom sub-footer */
-    .sub-footer {
-      margin-top: 2rem;
-      padding: 1rem 0 1.5rem;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #666;
-    }
-    .sub-footer a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .sub-footer a:hover,
-    .sub-footer a:focus {
-      text-decoration: underline;
-    }
   </style>
 </head>
 
 <body>
-  <!-- Top banner: uses streetAIview.jpg at repo root -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header>
   <div class="banner-wrapper" role="banner" aria-label="Family Orchards banner">
-    <img class="site-banner" src="streetAIview.jpg" alt="Entrance gate and orchard at Family Orchards">
-    <h1 class="banner-title">Family Orchards, LLC</h1>
+    <img class="site-banner" src="streetAIview.jpg" alt="Entrance gate and orchard at Family Orchards" />
+    <p class="banner-title">Family Orchards, LLC</p>
   </div>
 
-  <main>
-    <h1>Agricultural Production Plan</h1>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="products.html">Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#production-plan">Production plan</a>
+    <a href="copyright.html">Copyright</a>
+  </nav>
+</header>
 
-    <h2>Property Overview</h2>
+<main id="main-content">
+  <section class="hero-panel" aria-labelledby="welcome-heading">
+    <span class="eyebrow">Florida farm products</span>
+    <h1 id="welcome-heading">Diversified crops and aquaculture from Glades County</h1>
+    <p>
+      Family Orchards LLC is building a customer-focused farm business around direct-to-consumer offerings including lemongrass,
+      tilapia, sugarcane, bamboo shoots, and future Christmas trees.
+    </p>
+    <div class="button-row">
+      <a class="button-link" href="products.html">Browse products</a>
+      <a class="button-link button-link-secondary" href="gallery.html">View farm gallery</a>
+      <a class="button-link button-link-secondary" href="#production-plan">Read the production plan</a>
+    </div>
+  </section>
+
+  <section class="section-panel" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Family Orchards</h2>
+    <div class="list-grid">
+      <article class="info-card">
+        <h3>Rooted in Glades County</h3>
+        <p>
+          The farm spans 12.66 acres in Florida with a mix of active cultivation, pond-based aquaculture, and land preparation for
+          future plantings.
+        </p>
+      </article>
+      <article class="info-card">
+        <h3>Focused on specialty products</h3>
+        <p>
+          Current production centers on unique retail offerings that can grow over time, from fresh lemongrass and tilapia to
+          sugarcane, edible bamboo shoots, and Christmas trees.
+        </p>
+      </article>
+      <article class="info-card">
+        <h3>Built for steady growth</h3>
+        <p>
+          Family Orchards combines soil building, land care, planting schedules, and water management to expand responsibly season by
+          season.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-panel" aria-labelledby="featured-products-heading">
+    <h2 id="featured-products-heading">Featured farm products</h2>
+    <div class="card-grid">
+      <article class="product-card">
+        <h3>Lemongrass</h3>
+        <p>Planted during 2024 with first commercial harvest targeted for 2026.</p>
+      </article>
+      <article class="product-card">
+        <h3>Tilapia</h3>
+        <p>Small-scale freshwater pond production beginning in 2026 for direct retail sales.</p>
+      </article>
+      <article class="product-card">
+        <h3>Sugarcane and bamboo shoots</h3>
+        <p>Scheduled for planting during 2026 to expand the farm's mix of fresh specialty products.</p>
+      </article>
+      <article class="product-card">
+        <h3>Christmas trees</h3>
+        <p>Pine trees planted during 2025 with the first retail season targeted for 2030.</p>
+      </article>
+    </div>
+    <div class="button-row">
+      <a class="button-link button-link-secondary" href="products.html">See all product details</a>
+    </div>
+  </section>
+
+  <section class="section-panel" aria-labelledby="updates-heading">
+    <h2 id="updates-heading">Seasonal outlook</h2>
+    <p>
+      As each harvest window approaches, the website can highlight availability, planting progress, and pond milestones so customers
+      know what is coming next.
+    </p>
+    <ul>
+      <li><strong>2026:</strong> Lemongrass harvest and the first tilapia production cycle.</li>
+      <li><strong>2027:</strong> Sugarcane and edible bamboo shoots added to the product mix.</li>
+      <li><strong>2030:</strong> Christmas tree retail season joins the farm's annual offerings.</li>
+    </ul>
+  </section>
+
+  <section class="section-panel" aria-labelledby="gallery-preview-heading">
+    <h2 id="gallery-preview-heading">Farm gallery preview</h2>
+    <div class="gallery-grid">
+      <figure>
+        <img src="streetAIview.jpg" alt="Entrance gate and orchard at Family Orchards" />
+        <figcaption>Entrance and orchard view at Family Orchards.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gallery/satellite.jpg" alt="Satellite-style view of Family Orchards" />
+        <figcaption>Aerial perspective for field layout and planning.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gallery/honeydew.jpg" alt="Produce grown at Family Orchards" />
+        <figcaption>Fresh produce as the farm expands its seasonal offerings.</figcaption>
+      </figure>
+    </div>
+    <div class="button-row">
+      <a class="button-link button-link-secondary" href="gallery.html">Open the full gallery</a>
+    </div>
+  </section>
+
+  <section id="production-plan" class="section-panel" aria-labelledby="plan-heading">
+    <h2 id="plan-heading">Agricultural Production Plan</h2>
+    <h3>Property Overview</h3>
     <ul>
       <li><strong>Total Acreage:</strong> 12.66 acres</li>
       <li><strong>Acres Under Cultivation:</strong> 2.5 acres</li>
@@ -156,9 +256,9 @@
         <div class="iii-media">
           <div class="iii-image">
             <figure class="tilapia-figure">
-              <img src="assets/plan/tilapia4.jpg" alt="Fish vendor holding tilapia at Portbell market">
+              <img src="assets/plan/tilapia4.jpg" alt="Fish vendor holding tilapia at Portbell market" />
               <figcaption class="credit-marker">
-                <a href="/copyright.html#portbell-tilapia" aria-label="copyright">ⓘ</a>
+                <a href="copyright.html#portbell-tilapia" aria-label="View copyright information for the tilapia image">ⓘ</a>
               </figcaption>
             </figure>
           </div>
@@ -206,9 +306,11 @@
       </div>
     </details>
 
-    <div class="sub-footer">
-      <a href="/copyright.html">copyright</a>
-    </div>
+    </section>
+
+    <footer class="site-footer">
+      <p><a href="copyright.html">Copyright and image attributions</a></p>
+    </footer>
   </main>
 
   <script>
