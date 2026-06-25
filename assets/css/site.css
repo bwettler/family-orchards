@@ -56,6 +56,14 @@ img {
   color: #fff;
 }
 
+header {
+  display: none;
+}
+
+header[data-show-banner="true"] {
+  display: block;
+}
+
 main {
   max-width: 1100px;
   margin: 0 auto;
