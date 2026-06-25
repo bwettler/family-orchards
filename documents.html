@@ -12,66 +12,106 @@
   <link rel="stylesheet" href="assets/css/site.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <style>
-    .document-list {
-      max-width: 820px;
-      margin: 2rem auto;
+    .documents-shell {
+      max-width: 1300px;
+      margin: 1.75rem auto 3rem;
+      padding: 0 1rem;
     }
 
-    .document-item {
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      background: #f9f9f9;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
+    .documents-card {
+      background: #fff;
+      border: 1px solid #e7e7e7;
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
     }
 
-    .document-icon {
-      font-size: 3rem;
-      min-width: 60px;
-      text-align: center;
+    .documents-card h2 {
+      margin: 0 0 1.5rem;
+      color: #0b2e6f;
+      font-size: clamp(1.65rem, 1.3rem + 1vw, 2.2rem);
+      line-height: 1.2;
     }
 
-    .document-info {
-      flex: 1;
+    .docs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(1.05rem, 1rem + 0.3vw, 1.45rem);
     }
 
-    .document-info h3 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.1rem;
+    .docs-table tr + tr {
+      border-top: 1px solid #efefef;
     }
 
-    .document-info p {
-      margin: 0 0 1rem 0;
-      color: #666;
-      font-size: 0.95rem;
+    .docs-table td {
+      padding: 0.9rem 0.35rem;
+      vertical-align: middle;
     }
 
-    .download-link {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: #0b2e6f;
-      color: white;
+    .docs-table td:first-child {
+      width: 65%;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .docs-table td:nth-child(2),
+    .docs-table td:nth-child(3) {
+      width: 17.5%;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .file-link {
+      color: #3f46cc;
       text-decoration: none;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 1.35rem + 0.75vw, 2.1rem);
+      letter-spacing: 0.01em;
     }
 
-    .download-link:hover {
-      background: #082145;
+    .file-link:hover,
+    .file-link:focus-visible {
+      text-decoration: underline;
+      color: #2731a8;
     }
 
-    @media (max-width: 600px) {
-      .document-item {
-        flex-direction: column;
-        text-align: center;
+    @media (max-width: 840px) {
+      .documents-card {
+        padding: 1.35rem 1rem;
       }
 
-      .document-icon {
-        font-size: 2.5rem;
+      .docs-table {
+        font-size: 1rem;
+      }
+
+      .file-link {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .docs-table,
+      .docs-table tbody,
+      .docs-table tr,
+      .docs-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .docs-table tr {
+        padding: 0.75rem 0;
+      }
+
+      .docs-table td:first-child {
+        margin-bottom: 0.35rem;
+      }
+
+      .docs-table td:nth-child(2),
+      .docs-table td:nth-child(3) {
+        display: inline-block;
+        width: auto;
+        padding-right: 1rem;
       }
     }
   </style>
@@ -98,30 +138,67 @@
       <span class="eyebrow">Resources</span>
       <h1 id="documents-heading">Documents and Resources</h1>
       <p>
-        Download planning documents, agricultural plans, and other resources from Family Orchards LLC.
+        Download planning documents, agreements, and supporting files from Family Orchards LLC.
       </p>
     </section>
 
-    <section class="section-panel" aria-labelledby="downloads-heading">
-      <h2 id="downloads-heading">Available Documents</h2>
-      <div class="document-list">
-        <div class="document-item">
-          <div class="document-icon">📄</div>
-          <div class="document-info">
-            <h3>Family Orchards Glades County Agricultural Plan</h3>
-            <p>Microsoft Word document (.docx) - Complete agricultural production plan and business details.</p>
-            <a href="https://raw.githubusercontent.com/bwettler/family-orchards/main/documents/Family_Orchards_Glades_County_Agricultural_Plan.docx" class="download-link" download>Download DOCX</a>
-          </div>
-        </div>
+    <section class="documents-shell" aria-labelledby="downloads-heading">
+      <div class="documents-card">
+        <h2 id="downloads-heading">Available Documents</h2>
 
-        <div class="document-item">
-          <div class="document-icon">📋</div>
-          <div class="document-info">
-            <h3>Family Orchards Glades County Agricultural Plan</h3>
-            <p>PDF document - Agricultural production plan in portable format for easy viewing and sharing.</p>
-            <a href="https://raw.githubusercontent.com/bwettler/family-orchards/main/documents/Family_Orchards_Glades_County_Agricultural_Plan.docx.pdf" class="download-link" download>Download PDF</a>
-          </div>
-        </div>
+        <table class="docs-table" role="presentation">
+          <tbody>
+            <tr>
+              <td>Family Orchards Glades County Agricultureal Plan</td>
+              <td>
+                <a
+                  class="file-link"
+                  href="documents/Family_Orchards_Glades_County%20Agricultureal_Plan.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >.pdf</a>
+              </td>
+              <td>
+                <a
+                  class="file-link"
+                  href="documents/Family_Orchards_Glades_County%20Agricultureal_Plan.docx"
+                  target="_blank"
+                  rel="noopener"
+                >.docx</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>1st Draft Contract</td>
+              <td>
+                <a class="file-link" href="documents/1st%20Draft.pdf" target="_blank" rel="noopener">.pdf</a>
+              </td>
+              <td>
+                <a class="file-link" href="documents/1st%20Draft.docx" target="_blank" rel="noopener">.docx</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>A.I. Critique of 1st Draft Contract</td>
+              <td>
+                <a class="file-link" href="documents/AI%20critique.pdf" target="_blank" rel="noopener">.pdf</a>
+              </td>
+              <td>
+                <a class="file-link" href="documents/AI%20critique.docx" target="_blank" rel="noopener">.docx</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>2nd Draft</td>
+              <td>
+                <a class="file-link" href="documents/1st%20Final%20Agreement%20-%20Copy.pdf" target="_blank" rel="noopener">.pdf</a>
+              </td>
+              <td>
+                <a class="file-link" href="documents/Finala%20Agreement%20-%20Copy.docx" target="_blank" rel="noopener">.docx</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
